@@ -14,6 +14,6 @@ jobs:
 
       - name: WORK WORK
         run: |-
-          cd routes/multiply
+          cd services/multiply
           npm ci
           npm test
