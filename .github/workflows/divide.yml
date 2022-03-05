@@ -26,3 +26,6 @@ jobs:
       - name: Run tests
         working-directory: "services/divide"
         run: npm test
+
+      - name: hehe
+        run: hoho
