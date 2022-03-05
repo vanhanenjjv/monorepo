@@ -16,6 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
+      - name: Install root dependencies
+        working-directory: "services/multiply"
+        run: npm ci
+
       - name: Install dependencies
         run: npm ci
 
