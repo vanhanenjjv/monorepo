@@ -9,8 +9,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    env:
-      NODE_PATH: "../../"
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v2
@@ -19,7 +17,7 @@ jobs:
           cache: "npm"
 
       - name: Install root dependencies
-        run: npm install && cd services/divide && npm install && npm test
+        run: npm install
 
       - name: Install dependencies
         working-directory: "services/divide"
@@ -28,12 +26,9 @@ jobs:
       - run: ls -a
       - run: cd services/divide && ls -a
 
-      - name: Run biggest of tests
-        run: npm test
-
       - name: Run tests
         working-directory: "services/divide"
-        run: npm test
+        run: NODE_PATH=../../ npm test
 
       - name: hehe
         run: hoho
