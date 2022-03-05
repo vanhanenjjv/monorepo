@@ -4,16 +4,19 @@ on:
   push:
     paths:
       - "services/divide/**"
-      - ".github/workflows/divide.yaml"
+      - ".github/workflows/divide.yml"
 
 jobs:
+  defaults:
+    working-directory: "services/divide"
+
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
 
-      - name: WORK WORK
-        run: |-
-          cd services/divide
-          npm ci
-          npm test
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run tests
+        run: npm test

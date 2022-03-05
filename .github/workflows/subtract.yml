@@ -4,16 +4,19 @@ on:
   push:
     paths:
       - "services/subtract/**"
-      - ".github/workflows/subtract.yaml"
+      - ".github/workflows/subtract.yml"
 
 jobs:
+  defaults:
+    working-directory: "services/subtract"
+
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
 
-      - name: WORK WORK
-        run: |-
-          cd services/subtract
-          npm ci
-          npm test
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run tests
+        run: npm test

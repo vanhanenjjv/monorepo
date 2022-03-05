@@ -4,16 +4,19 @@ on:
   push:
     paths:
       - "services/{{SERVICE}}/**"
-      - ".github/workflows/{{SERVICE}}.yaml"
+      - ".github/workflows/{{SERVICE}}.yml"
 
 jobs:
+  defaults:
+    working-directory: "services/{{SERVICE}}"
+
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
 
-      - name: WORK WORK
-        run: |-
-          cd services/{{SERVICE}}
-          npm ci
-          npm test
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run tests
+        run: npm test

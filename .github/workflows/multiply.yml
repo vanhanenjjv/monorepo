@@ -4,16 +4,19 @@ on:
   push:
     paths:
       - "services/multiply/**"
-      - ".github/workflows/multiply.yaml"
+      - ".github/workflows/multiply.yml"
 
 jobs:
+  defaults:
+    working-directory: "services/multiply"
+
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
 
-      - name: WORK WORK
-        run: |-
-          cd services/multiply
-          npm ci
-          npm test
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run tests
+        run: npm test
