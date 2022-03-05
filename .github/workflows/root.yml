@@ -1,0 +1,22 @@
+name: Install root dependencies
+
+# Controls when the workflow will run
+on:
+  push:
+    paths-ignore:
+      - "services/**"
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm ci
+    
+      - name: Cache
+        uses: actions/cache@v2.1.7
+        with:
+          path: "."
+          key: "base"
