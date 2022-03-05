@@ -1,0 +1,19 @@
+name: "subtract"
+
+on:
+  push:
+    paths:
+      - "services/subtract/**"
+      - ".github/workflows/subtract.yaml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: WORK WORK
+        run: |-
+          cd routes/subtract
+          npm ci
+          npm test

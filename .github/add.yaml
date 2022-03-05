@@ -1,0 +1,19 @@
+name: "add"
+
+on:
+  push:
+    paths:
+      - "services/add/**"
+      - ".github/workflows/add.yaml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: WORK WORK
+        run: |-
+          cd routes/add
+          npm ci
+          npm test

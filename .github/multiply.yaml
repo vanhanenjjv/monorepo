@@ -1,0 +1,19 @@
+name: "multiply"
+
+on:
+  push:
+    paths:
+      - "services/multiply/**"
+      - ".github/workflows/multiply.yaml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: WORK WORK
+        run: |-
+          cd routes/multiply
+          npm ci
+          npm test

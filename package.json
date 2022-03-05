@@ -1,0 +1,20 @@
+{
+  "name": "monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate-service-workflows": "node ./scripts/generate-service-workflows.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanhanenjjv/monorepo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanhanenjjv/monorepo/issues"
+  },
+  "homepage": "https://github.com/vanhanenjjv/monorepo#readme"
+}

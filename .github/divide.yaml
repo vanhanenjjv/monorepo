@@ -1,0 +1,19 @@
+name: "divide"
+
+on:
+  push:
+    paths:
+      - "services/divide/**"
+      - ".github/workflows/divide.yaml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: WORK WORK
+        run: |-
+          cd routes/divide
+          npm ci
+          npm test
