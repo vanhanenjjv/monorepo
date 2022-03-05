@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "generate-service-workflows": "node ./scripts/generate-service-workflows.js"
   },
   "repository": {

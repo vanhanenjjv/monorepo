@@ -26,6 +26,9 @@ jobs:
       - run: ls -a
       - run: cd services/divide && ls -a
 
+      - name: Run biggest of tests
+        run: npm test
+
       - name: Run tests
         working-directory: "services/divide"
         run: npm test
