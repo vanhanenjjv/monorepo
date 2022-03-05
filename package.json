@@ -18,6 +18,8 @@
   "homepage": "https://github.com/vanhanenjjv/monorepo#readme",
   "description": "",
   "devDependencies": {
-    "jest": "^27.5.1"
+    "@types/jest": "^27.4.1",
+    "jest": "^27.5.1",
+    "typescript": "^4.6.2"
   }
 }
