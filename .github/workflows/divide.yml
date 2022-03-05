@@ -17,7 +17,7 @@ jobs:
           cache: "npm"
 
       - name: Install root dependencies
-        run: npm install
+        run: npm install && cd services/divide && npm install && npm test
 
       - name: Install dependencies
         working-directory: "services/divide"
