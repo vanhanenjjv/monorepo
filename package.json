@@ -1,7 +1,6 @@
 {
   "name": "monorepo",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "generate-service-workflows": "node ./scripts/generate-service-workflows.js"
@@ -16,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/vanhanenjjv/monorepo/issues"
   },
-  "homepage": "https://github.com/vanhanenjjv/monorepo#readme"
+  "homepage": "https://github.com/vanhanenjjv/monorepo#readme",
+  "description": "",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
 }
