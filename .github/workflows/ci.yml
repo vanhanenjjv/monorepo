@@ -19,4 +19,4 @@ jobs:
 
       - uses: ".github/workflows/_service.yml"
         with:
-          name: "add
+          name: "add"
