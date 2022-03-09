@@ -7,6 +7,10 @@ on:
 jobs:
   build:
     runs-on: "ubuntu-latest"
+    strategy:
+      matrix:
+       include:
+         - name: "add"
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v2
@@ -19,4 +23,4 @@ jobs:
 
       - uses: "./.github/workflows/service.yml"
         with:
-          name: "add"
+          name: ${{ matrix.name }}
