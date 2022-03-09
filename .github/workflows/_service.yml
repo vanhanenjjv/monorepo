@@ -1,0 +1,19 @@
+on:
+  workflow_call:
+    inputs:
+      name: description: "Name of the service"
+      required: true
+      type: "string"
+
+defaults:
+  run:
+    working-directory: "services/${{ inputs.name }}"
+
+jobs:
+  build:
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "Install service dependencies"
+        run: "npm install"
+      - name: "Run tests"
+        run: "npm test"
