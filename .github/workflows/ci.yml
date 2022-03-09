@@ -17,6 +17,6 @@ jobs:
       - name: "Install root dependencies"
         run: "npm install"
 
-      - uses: "./.github/workflows/service"
+      - uses: "./.github/workflows/service.yml"
         with:
           name: "add"
