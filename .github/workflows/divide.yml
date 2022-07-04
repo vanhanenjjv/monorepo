@@ -1,0 +1,28 @@
+name: "divide"
+
+on:
+  push:
+    paths:
+      - "services/divide/**"
+      - ".github/workflows/divide.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+          cache: "npm"
+
+      - name: Install root dependencies
+        run: npm install
+
+      - name: Install dependencies
+        working-directory: "services/divide"
+        run: npm install
+
+      - name: Run tests
+        working-directory: "services/divide"
+        run: npm test

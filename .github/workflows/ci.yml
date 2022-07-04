@@ -1,26 +1,26 @@
-name: "CI"
+# name: "CI"
 
-on:
-  push:
-    branches: ["main"]
+# on:
+#   push:
+#     branches: ["main"]
 
-jobs:
-  build:
-    runs-on: "ubuntu-latest"
-    strategy:
-      matrix:
-       include:
-         - name: "add"
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "14"
-          cache: "npm"
+# jobs:
+#   setup-root:
+#     runs-on: "ubuntu-latest"
+#     strategy:
+#       matrix:
+#        include:
+#          - name: "add"
+#     steps:
+#       - uses: actions/checkout@v1
+#       - uses: actions/setup-node@v2
+#         with:
+#           node-version: "14"
+#           cache: "npm"
 
-      - name: "Install root dependencies"
-        run: "npm install"
+#       - name: "Install root dependencies"
+#         run: "npm install"
 
-      - uses: "./.github/workflows/service.yml"
-        with:
-          name: ${{ matrix.name }}
+#       - uses: "./.github/workflows/service.yml"
+#         with:
+#           name: ${{ matrix.name }}
