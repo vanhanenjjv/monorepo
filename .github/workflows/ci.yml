@@ -11,6 +11,7 @@ jobs:
       matrix:
        include:
          - name: "add"
+         - name: "divide"
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v2
